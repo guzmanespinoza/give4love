@@ -1,0 +1,160 @@
+.img-profile {
+  box-shadow: none;
+  height: 168px;
+  left: 15px;
+  margin-top: 0;
+  top: -143px;
+  width: 168px;
+}
+
+.img-profile {
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.img-profile-fondo {
+  display: inline-block;
+}
+
+.img-profile {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.circle-avatar {
+  border: 6px solid #fff;
+  border-radius: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.img-title {
+  margin-top: 120px;
+  font-size: 40px;
+  color: #ffffff;
+  font-family: Montserrat;
+}
+
+#donante {
+  margin-top: 35px;
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgb(204 204 204 / 13%);
+  border-radius: .25rem;
+}
+
+
+.title-hd {
+  // position: absolute;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #828282;
+  margin-bottom: 20px;
+}
+
+.card-igle {
+  border-right: 0px solid rgba(0, 0, 0, 0.125);
+  border-left: 0px solid rgba(0, 0, 0, 0.125);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ofr {
+  font-family: "Montserrat";
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.val {
+  padding-right: 20px;
+  margin-right: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 37px;
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+  color: #7392b6;
+  font-family: "Montserrat";
+}
+
+.dtll {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.card {
+  border-radius: 0rem;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.21);
+  // box-shadow: 2px 4px 5px -6px rgb(255 255 255 / 75%);
+  box-shadow: 2px 4px 5px -6px rgb(142 142 142 / 75%);
+}
+
+.car{
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  font-size: 50px;
+  margin-right: 20px;
+}
+.car2{
+  font-size: 50px;
+}
+.img-lov{
+  display:block;
+margin:auto;
+}
+
+.ttldnd{
+  font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+
+.ttldndval{
+  font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+text-align: center;
+
+margin-bottom: 30px;
+
+color: #7392B6;
+}
+
+#donn{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+

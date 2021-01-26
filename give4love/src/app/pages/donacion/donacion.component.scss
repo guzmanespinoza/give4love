@@ -1,0 +1,361 @@
+.btn-secondary {
+  background: #7392b6;
+  border-color: #7392b6;
+  text-transform: uppercase;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  color: #fff;
+  border-color: #7392b6 !important;
+  background: #7392b6;
+  outline: none;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.1rem rgb(115 146 182) !important;
+}
+
+.btn-secondary.focus,
+.btn-secondary:focus {
+  box-shadow: 0 0 0 0.1rem rgb(115 146 182);
+}
+
+
+#donn{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.img-profile {
+  box-shadow: none;
+  height: 168px;
+  left: 15px;
+  margin-top: 0;
+  top: -143px;
+  width: 168px;
+}
+
+.img-profile {
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.img-profile-fondo {
+  display: inline-block;
+}
+
+.img-profile {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.circle-avatar {
+  border: 6px solid #fff;
+  border-radius: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.img-title {
+  margin-top: 120px;
+  font-size: 40px;
+  color: #ffffff;
+  font-family: Montserrat;
+}
+
+#donante {
+  margin-top: 35px;
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgb(204 204 204 / 13%);
+  border-radius: .25rem;
+}
+
+
+.title-hd {
+  // position: absolute;
+  font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 34px;
+/* identical to box height, or 170% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* #7392B6 */
+
+color: #7392B6;
+margin-bottom: 40px;
+}
+
+.card-igle {
+  border-right: 0px solid rgba(0, 0, 0, 0.125);
+  border-left: 0px solid rgba(0, 0, 0, 0.125);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ofr {
+  font-family: "Montserrat";
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.val {
+  padding-right: 20px;
+  margin-right: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 37px;
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+  color: #7392b6;
+  font-family: "Montserrat";
+}
+
+.dtll {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.card {
+  border-radius: 0rem;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.21);
+  // box-shadow: 2px 4px 5px -6px rgb(255 255 255 / 75%);
+  box-shadow: 2px 4px 5px -6px rgb(142 142 142 / 75%);
+}
+
+.car{
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  font-size: 50px;
+  margin-right: 20px;
+}
+.car2{
+  font-size: 50px;
+}
+.img-lov{
+  display:block;
+margin:auto;
+}
+
+.ttldnd{
+  font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+
+.ttldndval{
+  font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+text-align: center;
+
+margin-bottom: 30px;
+
+color: #7392B6;
+}
+
+#donn{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.form-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  color: #7392b6;
+  margin-bottom: 20px;
+}
+
+.vl {
+  background: #ffffff;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  height: 120px;
+}
+
+.vl-c {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 22px;
+  letter-spacing: 3px;
+  color: #7392b6;
+  padding-top: 45px;
+}
+
+#dn > .row {
+  margin-bottom: 10px;
+}
+
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.v-active {
+  background: #7392b6;
+  color: #fff !important;
+}
+
+.v-active > .vl-c {
+  color: #fff;
+}
+
+.v-active:hover >  .vl-c {
+  color: #849fbf !important;
+}
+
+.text-muted {
+  color: #849fbf;
+}
+
+.form-control {
+  color: #2d4d7e;
+}
+
+.card {
+  border-radius: 0;
+}
+
+.btn-secondary {
+  background: #7392b6;
+}
+
+#donar {
+  margin-top: 22px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+
+
+.vl:hover {
+  background: #ececec !important;
+}
+
+.mt20{
+  margin-top: 20px;
+}
+
+.form-check-label{
+  cursor: pointer;
+}
+
+.mbresultpx{
+  margin-bottom: 50px;
+}

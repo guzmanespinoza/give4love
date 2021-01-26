@@ -1,0 +1,90 @@
+@media (min-width: 768px){
+    .col-md-7 {
+        flex-grow: 0 !important;
+        max-width: 58.333333% !important;
+        flex-basis: 58.333333% !important;
+    }
+    .col-md-4 {
+        flex-grow: 0 !important;
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+    }
+}
+
+.jss1 {
+    width: auto;
+    height: 100vh;
+}
+
+.title-login{
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 40px;
+    font-weight: 500!important;
+    font-family: 'Montserrat';
+    letter-spacing: 8px;
+}
+
+.home-title{
+    font-weight: 500!important;
+    font-family: 'Montserrat';
+    letter-spacing: 8px;
+  }
+.olvide{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    text-decoration-line: underline;
+    line-height: 13px;
+}
+
+.form-login{
+    margin-top: 20%;
+}
+
+.no-tengo-cta{
+    margin-top: 40px;
+    font-weight: 400;
+}
+
+.form-control{
+    background: #e9ecef;
+    border-radius: 0 20px 20px 0;
+    border: 0px solid #ced4da;
+    font-size: 16px !important;
+    font-weight: 300;
+}
+
+
+.form-control:focus{
+    background: #e9ecef;
+    border-radius: 0 20px 20px 0;
+    border: 0px solid #ced4da;
+    box-shadow: none;
+}
+
+.btn-primary{
+    background: #4B7FFB;
+    border-color: #4B7FFB;
+}
+
+
+.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), .input-group>.input-group-append:not(:last-child)>.btn, .input-group>.input-group-append:not(:last-child)>.input-group-text, .input-group>.input-group-prepend>.btn, .input-group>.input-group-prepend>.input-group-text {
+    border-radius: 20px 0 0 20px;
+    border: 0px solid #ced4da;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.1rem rgb(115 146 182) !important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.1rem rgb(115 146 182);
+}

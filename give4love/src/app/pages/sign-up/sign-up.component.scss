@@ -1,0 +1,166 @@
+.title-sign-up {
+  font-family: Montserrat;
+
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 37px;
+  text-align: center;
+  letter-spacing: 0.155em;
+  color: #ffffff;
+  border-bottom: 2px dashed;
+  padding-bottom: 10px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(#7392B6, #F7F8F9);
+  z-index: 0;
+}
+
+.card-registro {
+  border-radius: 20px;
+  padding-top: 50px;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.card-registro-content{
+  border-radius: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+
+
+.card-img-top {
+  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+}
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+}
+
+.foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.m50-p {
+  margin: 40%;
+}
+
+.dropshadow {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  border-bottom: dashed 1px #ddd;
+}
+
+.header-register {
+  font-size: 14px;
+  color: grey;
+  cursor: no-drop;
+}
+
+.header-register:hover {
+  font-size: 14px;
+  color: grey;
+  cursor: no-drop;
+  // font-weight: 500;
+}
+
+.header-register.active {
+  color: #4b7ffb;
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
+
+.card-registro > .row > .col-md-4 > a {
+  margin-bottom: 30px;
+}
+
+.form-r {
+  margin-bottom: 50px;
+}
+
+.check {
+  margin-right: 20px;
+}
+
+.card-check {
+  padding: 20px;
+  background: #f7f8f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 136%;
+  /* or 14px */
+
+  text-align: justify;
+}
+
+.text-info-complete{
+  font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 22px;
+/* identical to box height, or 110% */
+text-align: center;
+margin-bottom: 30px;
+
+}
+
+.blue{
+  color: #4B7FFB;
+}
+
+.img-complete{
+  margin-bottom: 30px;
+}
+
+.mb30{
+  margin-bottom: 30px;
+}
+
+.form-text{
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.form-text-active{
+  font-family: Montserrat;
+  color: #4B7FFB !important;
+  // font-weight: 400;
+}
+
+.text-muted{
+  color: #849fbf;
+}

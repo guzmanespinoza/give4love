@@ -1,0 +1,272 @@
+<app-navbar [view]="['silo']"></app-navbar>
+<app-donacion-header [partner]="[partner]"></app-donacion-header>
+<div id="dn" class="container">
+    <section *ngIf="pantalla=='valor'">
+        <div class="row justify-content-md-center">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="form-title">Selecciona el monto deseado o ingresalo a continuación:</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <form class="row" (submit)="irAPara()">
+                    <div class="col-md-8 form-group">
+                        <label for="amount">Ingresa el monto deseado </label>
+                        <input type="text" [(ngModel)]="monto" name="amount" id="amount" placeholder="Ingresar"
+                            class="form-control form-control-sm" [showMaskTyped]="false" mask="0*.00"
+                            [dropSpecialCharacters]="false" prefix="$">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-block" id="donar"> DONAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center amount">
+            <div class="col-md-2" (click)="monto=10.00">
+                <div class="card vl" [ngClass]="{' v-active':monto==10.00}">
+                    <span class="vl-c text-center "> $10</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==20.00}" (click)="monto=20.00">
+                    <span class="vl-c text-center "> $20</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==30.00}" (click)="monto=30.00">
+                    <span class="vl-c text-center "> $30</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==40.00}" (click)="monto=40.00">
+                    <span class="vl-c text-center "> $40</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==50.00}" (click)="monto=50.00">
+                    <span class="vl-c text-center "> $50</span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center amount">
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==100.00}" (click)="monto=100.00">
+                    <span class="vl-c text-center "> $100</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==200.00}" (click)="monto=200.00">
+                    <span class="vl-c text-center "> $200</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==300.00}" (click)="monto=300.00">
+                    <span class="vl-c text-center "> $300</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==400.00}" (click)="monto=400.00">
+                    <span class="vl-c text-center "> $400</span>
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <div class="card vl" [ngClass]="{' v-active':monto==500.00}" [ngClass]="{' v-active':monto==500.00}"
+                    (click)="monto=500.00">
+                    <span class="vl-c  text-center"> $500</span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center amount">
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==1000.00}" (click)="monto=1000.00">
+                    <span class="vl-c text-center "> $1000</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==2000.00}" (click)="monto=2000.00">
+                    <span class="vl-c text-center "> $2000</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==3000.00}" (click)="monto=3000.00">
+                    <span class="vl-c text-center "> $3000</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==4000.00}" (click)="monto=4000.00">
+                    <span class="vl-c text-center "> $4000</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card vl" [ngClass]="{' v-active':monto==5000.00}" (click)="monto=5000.00">
+                    <span class="vl-c text-center "> $5000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center mt20">
+            <div class="col-md-3">
+                <button class="btn btn-secondary btn-block" type="button" (click)="regresar()">
+                    REGRESAR
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section *ngIf="pantalla=='para'">
+        <div class="row" id="donante">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-1">
+                <img class="img-lov" src="assets/images/svg/corazon.svg" alt=" ">
+            </div>
+            <div class="col-md-6">
+                <h3 class="title-hd">La donación es para:</h3>
+            </div>
+            <div class="col-md-3" id="donn">
+                <img class="img-lov" src="assets/images/svg/mano-corazon.svg" alt=" ">
+                <h3 class="ttldnd">MONTO TOTAL</h3>
+                <h3 class="ttldndval">{{monto|currency}}</h3>
+                <button (click)="pantalla='valor'" class="btn btn-outline-primary btn-block" type="button">
+                    CAMBIAR MONTO
+                </button>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12" *ngIf="donationTypes.data.length==0">
+                        <div class="card card-igle">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <br>
+                                        <span class="ofr align-middle text-center center"> NO HAY OPCIONES </span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngFor="let d of donationTypes.data">
+                        <div class="card card-igle">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="id" id="{{d.id}}"
+                                                (change)="setiarId(d)">
+                                            <label class="form-check-label" for="{{d.id}}">
+                                                {{d.attributes.description}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mt20">
+                    <div class="col-md-3">
+                        <button class="btn btn-secondary btn-block" type="button" (click)="regresar()">
+                            CANCELAR
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-block" type="button" (click)="confirmacion()">
+                            CONTINUAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section *ngIf="pantalla=='confirm'">
+        <div class="row" id="donante">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-1">
+                <img class="img-lov" src="assets/images/svg/corazon.svg" alt=" ">
+            </div>
+            <div class="col-md-6">
+                <h3 class="title-hd">Detalle de donación:</h3>
+            </div>
+            <div class="col-md-3" id="donn">
+                <img class="img-lov" src="assets/images/svg/mano-corazon.svg" alt=" ">
+                <h3 class="ttldnd">MONTO TOTAL</h3>
+                <h3 class="ttldndval">{{totalConfirm|currency}}</h3>
+                <button (click)="pantalla='valor'" class="btn btn-outline-primary btn-block" type="button">
+                    AGREGAR DONACIÓN
+                </button>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12" *ngFor="let d of donacionesSeleccionadas">
+                        <div class="card card-igle">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                    
+                                                <span class="ofr align-middle"> Ofrenda </span>
+                                                <span class="val align-middle">{{d.monto| currency}}</span>
+                                            </div>
+                           
+                                            
+                                            <div class="  col-md-7">
+                                       
+                                                <!-- <span class="car align-middle"></span> -->
+                                                <span class="ofr align-middle">PARA:</span>
+                                                <span class="dtll align-middle">{{d.tipo.attributes.description}}</span>
+                                            
+                                                <img title="Eliminar" (click)="quitarDonacion(d)" class="trash-right"
+                                                src="assets/images/svg/trash.svg" alt="">
+
+                                            </div>
+                                        </div>
+
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mt20 mbresultpx">
+                    <div class="col-md-3">
+                        <button class="btn btn-secondary btn-block" type="button" (click)="regresar()">
+                            CANCELAR DONACIÓN
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-block" type="button"
+                            [disabled]="donacionesSeleccionadas.length==0" (click)="continuar()">
+                            CONTINUAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <div id="modal_login" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" height="400px">
+                <app-form-login (initSesion)="login($event)" (signUp)="signUpMeth()"></app-form-login>
+            </div>
+        </div>
+    </div>
+
+
+</div>

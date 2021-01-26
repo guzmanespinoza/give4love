@@ -1,0 +1,140 @@
+<app-navbar [view]="['silogin']"></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="coverBorder">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="img-profile">
+                            <img height="200px" class="circle-avatar rounded-circle" src="{{user.image}}"
+                                alt="Mi perfil">
+                        </div>
+
+                    </div>
+                    <div class="col-md-9">
+                        <h2 class="img-title">{{user.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="donante">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <h3 class="title-hd">HISTORIAL DE DONACIONES</h3>
+        </div>
+        <div class="col-md-3" id="donn">
+            <img class="img-lov" src="assets/images/svg/corazon.svg" alt=" ">
+            <h3 class="ttldnd">TOTAL DONADO</h3>
+            <h3 class="ttldndval">{{totalDonado|currency}}</h3>
+            <button (click)="irADonar()" class="btn btn-outline-primary btn-block" type="button">
+                DONAR
+            </button>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12" *ngIf="getALlDonationsData.data.length==0">
+                    <div class="card card-igle">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <br>
+                                    <span class="ofr align-middle text-center center"> NO HAY DONACIONES </span>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" *ngFor="let d of getALlDonationsData.data">
+                    <div class="card card-igle">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-1 col-sm-2">
+                                            <img src="{{d.attributes.partner.image}}" width="50px" alt="">
+                                        </div>
+                                        <div class="col-md-6 col-sm-10">
+                                            <span class="ofr align-middle"> Ofrenda </span>
+                                            <span class="val align-middle">{{d.attributes.amount| currency}}</span>
+                                            <p>
+                                            <figcaption class="blockquote-footer">
+                                                {{d.attributes.partner.name}}  <cite title="Source Title">{{d.attributes.created_at | date :'short'}}</cite>
+                                            </figcaption>
+                                            </p>
+
+                                        </div>
+                                        <div class="col-md-5 col-sm-12">
+                                            <span class="car align-middle"></span>
+                                            <span class="ofr align-middle">PARA:</span>
+                                            <span class="dtll align-middle">{{d.attributes.reason.text}}</span>
+
+                                            <img title="Reembolsar" (click)="showModalRefund(d)" class="trash-right"
+                                                src="assets/images/svg/desembolso-blue.svg" alt="">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-9 text-center">
+                                <img title="Eliminar" src="assets/images/svg/trash.svg" alt="">
+
+
+                                <h3 class="txt-m">Reembolsar</h3>
+                            </div>
+                            <div class="col-md-9">
+                                <br>
+                                <br>
+                                <div class="container">
+                                    <form class="row" [formGroup]="donationTypeForm" (ngSubmit)="submitRefund()">
+                                        <ng-container formGroupName="data">
+                                            <ng-container formGroupName="attributes">
+                                                <div class="col-md-12 form-group">
+                                                    <label for="description">Motivo de reembolso</label>
+                                                    <input type="text" formControlName="reason" id="reason"
+                                                        class="form-control form-control-sm">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button type="button" class="btn btn-secondary btn-block"
+                                                        (click)="regresarRegund()">Cancelar</button>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button type="submit"
+                                                        class="btn btn-primary btn-block">Continuar</button>
+                                                </div>
+                                            </ng-container>
+                                        </ng-container>
+                                    </form>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <simple-notifications [options]="options"></simple-notifications>

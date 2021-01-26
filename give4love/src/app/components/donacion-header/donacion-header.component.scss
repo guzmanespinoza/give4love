@@ -1,0 +1,62 @@
+.img-profile {
+    box-shadow: none;
+    height: 168px;
+    left: 15px;
+    margin-top: 0;
+    top: -143px;
+    width: 168px;
+  }
+  
+  .img-profile {
+    border-radius: 100%;
+    display: inline-block;
+  }
+  
+  .img-profile-fondo {
+    display: inline-block;
+  }
+  
+  .img-profile {
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  
+  .circle-avatar {
+    border: 6px solid #fff;
+    border-radius: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .img-title {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    color: #ffffff;
+    font-family: Montserrat;
+  }
+  
+  .img-sub-title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 34px;
+    /* identical to box height, or 97% */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+  }
+
+  #head{
+      margin-bottom: 40px;
+  }

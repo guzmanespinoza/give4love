@@ -1,0 +1,58 @@
+<app-navbar [view]="['silo']"></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 logo-donaciones">
+            <div class="col-md-12">
+                <img src="assets/images/svg/profile.svg" alt="">
+                <h3 class="donaciones align-middle">MI PERFIL</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group" id="opciones">
+                <li class="list-group-item list-lg" [ngClass]="{'active-i':tab=='user'}">
+                    <a [routerLink]="" (click)="tab='user'"> Actualizar mi info.</a>
+                </li>
+                <!-- <li class="list-group-item list-lg" [ngClass]="{'active-i':tab=='acerca'}">
+                    <a [routerLink]="" (click)="tab='acerca'"> Acerca de</a>
+                </li> -->
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="card" *ngIf="tab=='user'">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col md-12">
+                            <h3 class="text-center acc-info">ACTUALIZAR MI INFORMACION</h3>
+                            <h5 class="text-center acc-info-2">CAMBIAR MI CONTRASEÑA</h5>
+                        </div>
+                        <div class="col-md-12">
+                            <app-form-user *ngIf="dataUserEdit.links!=null" [dataUserEdit]="dataUserEdit" [modoEdicion]="true"
+                                (btnRegresar)="regresar($event)" (btnSiguiente)="actualizarUsuario($event)">
+                            </app-form-user>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" *ngIf="tab=='acerca'">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col md-12">
+                            <h3 class="text-center acc-info">ACERCA DE</h3>
+                            <h5 class="text-center acc-info-2">ACTUALIZAR MI INFORMACION</h5>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- <app-form-partner  [dataParnertEdit]="dataPartnerEdit" [modoEdicion]="true" (btnRegresar)="regresar($event)" (btnSiguiente)="actualizarPartner($event)"></app-form-partner> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />" ></ngx-spinner>

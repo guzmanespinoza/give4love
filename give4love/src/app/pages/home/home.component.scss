@@ -1,0 +1,119 @@
+.btn-primary {
+  background: #7392b6;
+  border-color: #7392b6;
+  text-transform: uppercase;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  border-color: #7392b6 !important;
+  background: #7392b6;
+  outline: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.1rem rgb(115 146 182) !important;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.1rem rgb(115 146 182);
+}
+
+.btn-ini-sesion {
+  margin-top: 5%;
+  width: 250px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background: #7392b6;
+  border-color: #7392b6;
+}
+
+#content-home {
+  margin-top: 10%;
+}
+
+.home-title {
+  font-weight: 500 !important;
+  font-family: "Montserrat";
+  letter-spacing: 8px;
+  text-shadow: 1px 1px 1px rgb(160, 158, 158);
+}
+.dropdown-menu-i {
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  overflow: scroll;
+  height: 280px;
+  cursor: pointer;
+  // padding-bottom: 20px;
+  // margin-bottom: 50px;
+}
+
+.dropdown-menu-i::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: none; /* Ocultar scroll */
+}
+
+.dropdown,
+.dropleft,
+.dropright,
+.dropup {
+  position: relative;
+  background: #fff;
+}
+
+p.link {
+  color: #7694b7;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.img-select {
+  margin-right: 5px;
+  width: 90px;
+}
+
+.inlt {
+  display: inline;
+}
+
+.ig {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 34px;
+  margin-top: 20px;
+  color: #7392b6;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.igd {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 34px;
+  margin-left: 10px;
+  margin-top: 0;
+  color: #828282;
+}
+
+@media only screen and (max-width: 600px) {
+  .row {
+    display: block;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}

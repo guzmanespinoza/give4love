@@ -1,0 +1,233 @@
+<app-navbar [view]="view"></app-navbar>
+<div class="overlay"></div>
+<div class="container form-r">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <h1 class="title-sign-up">Registro</h1>
+        </div>
+        <div class="col-md-9">
+            <div class="container bg-white card-registro">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="nav-link text-center header-register" [ngClass]="{active:tab=='donante'}">
+                            1. Registrarme
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a class="nav-link text-center  header-register" [ngClass]="{active:tab=='direccion'}">
+                            2. Dirección
+                        </a>
+                    </div>
+
+                    <div class="col-md-5">
+                        <a class="nav-link text-center  header-register" [ngClass]="{active:tab=='completo'}">3.
+                            Registro completo</a>
+                    </div>
+                </div>
+
+                <div *ngIf="tab=='donante'" class="card-registro-content" id="agregar-donante">
+                    <form class="row" [formGroup]="personForm" (ngSubmit)="registrarme()">
+                        <div class="form-group col-md-12 text-center">
+
+                            <div class="circular--landscape dropshadow">
+                                <img class="" src="{{imgLoaded}}" alt="Card image cap">
+                                <input class="foto" type="file" (change)="cargarImagen($event)">
+                            </div>
+
+                            <p class="text-center label">
+                                Foto de perfil
+                            </p>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                <div *ngIf="f.name.errors.required">Por favor, ingresa tus Nombres y Apellidos</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="tel">Teléfono</label>
+                            <input type="text" class="form-control form-control-sm" maxlength="17" formControlName="phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">Por favor, ingresa tu número de teléfono</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tel">Celular</label>
+                            <input type="text" class="form-control form-control-sm" maxlength="17"
+                                formControlName="cell_phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.cell_phone.errors }">
+                            <div *ngIf="submitted && f.cell_phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.cell_phone.errors.required">Por favor, ingresa tu número de celular</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" class="form-control form-control-sm" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Por favor, ingresa tu Email</div>
+                                <div *ngIf="f.email.errors.email">Por favor, Email no valido</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tel">Contraseña</label>
+                            <input type="password" class="form-control form-control-sm" formControlName="password"
+                                [ngClass]="{ 'is-invalid':submitted && f.password2.value!=f.password.value || submitted && f.password.errors}">
+                            <small id="emailHelp" class="form-text text-muted"
+                                [ngClass]="{'form-text-active':validadorPasword()[0]}">
+                                <img height="14px"
+                                    src="assets/images/svg/check-{{validadorPasword()[0]?'valid.svg':'invalid.svg'}}"
+                                    alt="">
+                                Una letra mayuscula.
+                            </small>
+                            <small id="emailHelp" class="form-text text-muted"
+                                [ngClass]="{'form-text-active':validadorPasword()[1]}">
+                                <img height="14px"
+                                    src="assets/images/svg/check-{{validadorPasword()[1]?'valid.svg':'invalid.svg'}}"
+                                    alt="">
+                                Un número
+                            </small>
+                            <small id="emailHelp" class="form-text text-muted"
+                                [ngClass]="{'form-text-active':validadorPasword()[2]}">
+                                <img height="14px"
+                                    src="assets/images/svg/check-{{validadorPasword()[2]?'valid.svg':'invalid.svg'}}"
+                                    alt="">
+                                Un carácter especial
+                            </small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tel">Confirmar contraseña</label>
+                            <input type="password" class="form-control form-control-sm" formControlName="password2"
+                                [ngClass]="{ 'is-invalid': submitted && f.password2.errors|| submitted && f.password2.value!=f.password.value }">
+                            <div *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+                                <div *ngIf="f.password2.errors.required">Por favor, ingresa confirmación de tu
+                                    contraseña</div>
+                            </div>
+                            <div *ngIf="submitted && f.password2.value!=f.password.value" class="invalid-feedback">
+                                <div>Contraseñas no coinciden</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb30"></div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <button type="button" (click)="regresar()" class="btn btn-secondary btn-block">REGRESAR</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button type="submit" class="btn btn-primary btn-block">SIGUIENTE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div *ngIf="tab=='direccion'" class="card-registro-content" id="agregar-direccion">
+                    <form class="row" [formGroup]="addressForm" (ngSubmit)="registrarAddress()">
+                        <div class="form-group col-md-12">
+                            <label for="text">Dirección</label>
+                            <textarea class="form-control form-control-sm" formControlName="text"
+                                [ngClass]="{ 'is-invalid': submitted2 && f2.text.errors }">
+                            </textarea>
+                            <div *ngIf="submitted2 && f2.text.errors" class="invalid-feedback">
+                                <div *ngIf="f2.text.errors.required">Por favor, ingresa tu dirección</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="street">Calle</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="street" [ngClass]="{ 'is-invalid': submitted2 && f2.street.errors }">
+                            <div *ngIf="submitted2 && f2.street.errors" class="invalid-feedback">
+                                <div *ngIf="f2.street.errors.required">Por favor, ingresa tu calle</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="street_line">Línea de Calle</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="street_line" [ngClass]="{ 'is-invalid': submitted2 && f2.street_line.errors }">
+                            <div *ngIf="submitted2 && f2.street_line.errors" class="invalid-feedback">
+                                <div *ngIf="f2.street_line.errors.required">Por favor, ingresa tu línea de calle</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="postal_code">Código Postal</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="postal_code" [ngClass]="{ 'is-invalid': submitted2 && f2.postal_code.errors }">
+                            <div *ngIf="submitted2 && f2.postal_code.errors" class="invalid-feedback">
+                                <div *ngIf="f2.postal_code.errors.required">Por favor, ingresa tu código postal</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="city">Ciudad</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="city" [ngClass]="{ 'is-invalid': submitted2 && f2.city.errors }">
+                            <div *ngIf="submitted2 && f2.city.errors" class="invalid-feedback">
+                                <div *ngIf="f2.city.errors.required">Por favor, ingresa tu ciudad</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="state">Estado</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="state" [ngClass]="{ 'is-invalid': submitted2 && f2.state.errors }">
+                            <div *ngIf="submitted2 && f2.state.errors" class="invalid-feedback">
+                                <div *ngIf="f2.state.errors.required">Por favor, ingresa tu estado</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 card-check">
+
+
+                            <label for="saveUserNameCheckBox">
+                                <input type="checkbox" class="check" id="saveUserNameCheckBox" #saveUserNameCheckBox
+                                    [checked]="terminos" (change)="onSaveUsernameChanged(saveUserNameCheckBox.checked)">
+                                <p> Acepto los <b class="link">Términos de uso</b> de Give4faith de
+                                    forma electrónica y acuderá
+                                    legalmente obligado por estos Términos de uso.</p>
+                            </label>
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <button type="button" class="btn btn-secondary btn-block"
+                                        (click)="tab='donante'">REGRESAR</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button type="submit" class="btn btn-primary btn-block">SIGUIENTE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div *ngIf="tab=='completo'" class="card-registro-content" id="agregar-completo">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-12 text-center">
+                            <img class="img-complete" src="assets/images/svg/complete.svg" alt="">
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="text-center text-info-complete blue">El registro esta casi
+                                completo
+                            </h2>
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="text-center text-info-complete">Revisa tu correo electrónico</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="lead text-center">
+                                Para asegurarnos que registramos la dirección de correo electrónico
+                                correcta.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />">
+</ngx-spinner>

@@ -1,0 +1,167 @@
+<app-navbar [view]="view"></app-navbar>
+<div class="overlay"></div>
+<div class="container form-r">
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-9">
+
+            <div class="container bg-white card-registro">
+                <div class="row dn">
+                    <div class="col-md-4">
+                        <a class="nav-link text-center header-register" [ngClass]="{active:tab=='donante'}">
+                            1. Registrarme
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a class="nav-link text-center  header-register" [ngClass]="{active:tab=='direccion'}">
+                            2. Dirección
+                        </a>
+                    </div>
+
+                    <div class="col-md-5">
+                        <a class="nav-link text-center  header-register" [ngClass]="{active:tab=='completo'}">3.
+                            Registro completo</a>
+                    </div>
+                </div>
+
+                
+
+                <div *ngIf="tab=='donante'" class="card-registro-content" id="agregar-donante">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="text-center info-header-pay">INFORMACION DE FACTURACIÓN</h3>
+                        </div>
+                    </div>
+                    <form class="row" [formGroup]="personForm" (ngSubmit)="registrarme()">
+
+                        <div class="form-group col-md-12">
+                            <label for="nombre">Número de tarjeta de Crédito o Débito</label>
+                            <input type="text" mask="0000 0000 0000 0000" placeholder="0000 0000 0000 0000"
+                                class="form-control form-control-sm" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                <div *ngIf="f.name.errors.required">Por favor, ingresa una tarjeta valida</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="tel">Fecha de vencimiento</label>
+                            <input type="text" class="form-control form-control-sm" placeholder="MM/AAAA" mask="00/0000"
+                                [showMaskTyped]="false" formControlName="phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">Por favor, ingresa tu número de teléfono</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tel">CVV</label>
+                            <input type="text" class="form-control form-control-sm" placeholder="000" mask="000"
+                                formControlName="cell_phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.cell_phone.errors }">
+                            <div *ngIf="submitted && f.cell_phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.cell_phone.errors.required">Por favor, ingresa tu número de celular</div>
+                            </div>
+                        </div>
+                        <div class="form-group col md-6">
+                            <label for="name">Código Postal</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        </div>
+
+                        <div class="form-group col md-6"></div>
+                        <div class="form-group col-md-12">
+                            <label for="email">Direccion</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Por favor, ingresa tu Email</div>
+                                <div *ngIf="f.email.errors.email">Por favor, Email no valido</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Apellido</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="pais">Pais</label>
+                            <select name="pais" id="pais" class="form-control">
+                                <option *ngFor="let c of paises" value="{{c.name}}" >{{c.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="dpt">Departamento</label>
+                            <!-- <select name="dpt" id="dpt" class="form-control"></select> -->
+                            <input type="text" class="form-control form-control-sm"  />
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                            <label for="mun">Municipio</label>
+                            <input type="text" class="form-control form-control-sm"  />
+                            <!-- <select name="mun" id="mun" class="form-control"></select> -->
+                        </div>
+
+                        <div class="col-md-12 mb30"></div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <button type="button" (click)="regresar()"
+                                        class="btn btn-secondary btn-block">REGRESAR</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button type="submit" class="btn btn-primary btn-block">SIGUIENTE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div *ngIf="tab=='completo'" class="card-registro-content" id="agregar-completo">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-12 text-center">
+                            <img class="img-complete" src="assets/images/svg/complete.svg" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="text-center text-info-complete blue">
+                                Su donación fue
+                                realizada éxitosamente
+                            </h2>
+                        </div>
+                        <!-- <div class="col-md-12">
+                            <h2 class="text-center text-info-complete">Revisa tu correo electrónico</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="lead text-center">
+                                Para asegurarnos que registramos la dirección de correo electrónico
+                                correcta.
+                            </p>
+                        </div> -->
+                        <div class="col-md-12 mb30"></div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <button type="button" (click)="irAMiHistorial()"
+                                        class="btn btn-secondary btn-block">IR A MI HISTORIAL</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button (click)="realizarOtra()" class="btn btn-primary btn-block">REALIZAR OTRA</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />">
+</ngx-spinner>

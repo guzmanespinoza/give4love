@@ -1,0 +1,316 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(assets/fonts/montserrat.css);
+$images: "assets/images";
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.simple-notification-wrapper {
+  position: fixed;
+  width: 300px;
+  z-index: 99999999 !important;
+}
+
+.background-home {
+  background: url("#{$images}/background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  background-color: #fafafa;
+  background-repeat: no-repeat;
+  box-sizing: border-box !important;
+  background-position: center bottom;
+  position: fixed;
+  margin: 0 !important;
+  color: #fafafa;
+  display: block;
+}
+
+.coverBorder {
+  background: url("#{$images}/font-profile.png") bottom left repeat-x;
+  border-bottom-color: rgba(0, 0, 0, 0.4);
+  max-width: 100%;
+  height: 200px;
+  background-position: center;
+}
+
+.jss1 {
+  width: auto;
+  height: 100vh;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.jss2 {
+  // background-size: 100% contain;
+  background-color: #fafafa;
+  background-image: url("#{$images}/font-login.png");
+  background-repeat: no-repeat;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.t-35 {
+  font-size: 35px;
+}
+
+.t-32 {
+  font-size: 32px;
+}
+.t-28 {
+  font-size: 28px;
+}
+
+.t-24 {
+  font-size: 24px;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.navbar-light {
+  background-color: #fff !important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.21);
+  margin-bottom: 20px;
+}
+
+.navbar-light .navbar-toggler {
+  color: #0062cc;
+  border-color: rgb(255, 255, 255);
+}
+
+.title-nav {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #000000;
+  font-family: Montserrat;
+}
+
+.navbar-light .navbar-toggler-icon {
+  font-size: 20px;
+  height: 20px;
+}
+
+.card {
+  border-radius: 0rem;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.21);
+  box-shadow: 2px 4px 5px -6px rgba(0, 0, 0, 0.75);
+}
+
+.img-circle {
+  // width:50px;
+  // height:50px;
+  //     border-radius:150px;
+  //     box-sizing: border-box;
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  float: right;
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f14 {
+  font-size: 14px;
+}
+
+.c-name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  padding-left: 15px;
+  margin-bottom: 0px;
+}
+
+.c-date {
+  margin-top: 0px;
+  padding-left: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #828282;
+}
+
+.person {
+  display: inline-flex;
+}
+
+.c-money {
+  color: #7392b6;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+.c-ofrenda {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4f4f4f;
+  letter-spacing: 1px;
+}
+
+.perfil {
+  padding-right: 5%;
+}
+
+.content {
+  margin-right: 10%;
+}
+
+.money {
+  border-left: 1px solid #e0e0e0;
+  padding-left: 5%;
+  margin-right: 10%;
+}
+
+.option {
+  // margin-right: 20px;
+  border-left: 1px solid #e0e0e0;
+  padding-left: 2%;
+}
+
+.f20 {
+  font-size: 20px;
+}
+
+.f16 {
+  font-size: 16px;
+}
+
+.m-b-0 {
+  margin-bottom: 0;
+}
+
+.crd {
+  padding-top: 2%;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+header {
+  margin-bottom: 75px;
+}
+
+nav {
+  height: 65px !important;
+}
+
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+label {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #2d4d7e;
+}
+
+.label {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2d4d7e;
+}
+
+
+.form-control {
+  color: #2d4d7e;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+  display: none;  /* Ocultar scroll */
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+body::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* Cambiamos el fondo cuando esté en active */
+body::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+body::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+/* Cambiamos el fondo cuando esté en active o hover */
+body::-webkit-scrollbar-track:hover,
+bodyd::-webkit-scrollbar-track:active {
+background: #d4d4d4;
+}
+
+.center{
+  display: block;
+    margin: auto;
+}
+
+
+.donaciones{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  padding-left: 2%;
+  line-height: 37px;
+  letter-spacing: 5.5px;
+  text-transform: uppercase;
+  color: #4B7FFB;
+  display: inline-block;
+}
+
+.logo-donaciones{
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.mg-t{
+  margin-top: 50px;
+}
+
+.trash-right{
+  float: right;
+    margin: 0;
+    position: relative;
+    top: 30%;
+    cursor: pointer;
+}

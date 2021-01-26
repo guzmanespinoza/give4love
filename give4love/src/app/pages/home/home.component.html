@@ -1,0 +1,69 @@
+<div class="background-home">
+    <button class="btn btn-primary btn-ini-sesion float-right" (click)="goHome()">
+       INICIAR SESION
+    </button>
+
+    <div class="container" id="content-home">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <h1 class="lead t-35 home-title">GIVE4LOVE</h1>
+                <p class="lead t-28">Busca tu organización o
+                    caridad a la que deseas donar</p>
+            </div>
+            <div class="col-md-10"></div>
+            <div class="col-md-7">
+                <form>
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <input (focus)="visible=true" type="text"  [(ngModel)]="filterQuery"
+                                placeholder="Lugar de culto, caridad, ubicación, pastor"
+                                class="form-control dropdown-toggle" id="dropdownMenu1" name="dropdownMenu1" autocomplete="off">
+                            <ul class="dropdown-menu-i" *ngIf="visible==true">
+                                <li *ngFor="let p of partners.data | filter : filterQuery">
+                                    <a (click)="goToDonar(p)">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <img src="{{p.attributes.image}}" class="img-select"
+                                                    class="img-select " />
+
+                                            </div>
+                                            <div class="col-md-10">
+                                                <p class="ig align-middle text-left">{{p.attributes.name}}</p>
+                                                <p class="igd align-middle text-left">
+                                                    {{p.attributes.address[0].street+ ","}}
+                                                    {{p.attributes.address[0].street_line+ ","}}
+                                                    {{p.attributes.address[0].name+ ","}}
+                                                    {{p.attributes.address[0].city + ","}}
+                                                    {{p.attributes.address[0].country+ ","}}
+                                                    {{"CP "+p.attributes.address[0].postal_code}}
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <p class="link" (click)="getAllPartners(offset+20, limit+20)">Ver más</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="modal_login" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" height="400px">
+        <app-form-login (initSesion)="login($event)"  (signUp)="signUpMeth()" ></app-form-login>
+    </div>
+  </div>
+</div>
+
+
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />" ></ngx-spinner>

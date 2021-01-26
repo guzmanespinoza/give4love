@@ -1,0 +1,102 @@
+
+<header *ngIf="verNav==true">
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <p class="navbar-brand" href="#" (click)="menuOpen()"  *ngIf="view!='noLogin'">
+                <span class="navbar-toggler-icon"></span>
+                <span class="title-nav"> GIVE4LOVE</span>
+            </p>
+
+            <p class="navbar-brand" href="#"  *ngIf="view=='noLogin'">
+                <span class="title-nav"> GIVE4LOVE</span>
+            </p>
+
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" *ngIf="view!='noLogin'">
+                <ul class="navbar-nav  ml-auto">
+
+
+                    <li class="nav-item iglesia-name">
+                        <a class="nav-link  disabled" href="#" tabindex="-1" aria-disabled="true">
+
+                            <span class="inline-block mt20">DONANTE</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown" *ngIf="user">
+                        <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true">
+                            <img class=" inline circle avatar" src="{{user.image}}" alt="">
+                            <span
+                                class="inline-block align-middle name">{{user.name | slice:0:24}}.</span>
+                            <span class="inline-block align-middle date">{{now  | date:'fullDate' | uppercase}}</span>
+                            <span class="inline-block align-middle date">{{now  | date:'shortTime'}}</span>
+
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item acx" routerLink='/config-account'>
+                                VER PERFIL
+                            </a>
+                            <a class="dropdown-item" href="#" (click)="cerrarSesion()">
+                                CERRAR SESION
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+          
+
+        </nav>
+    </div>
+</header>
+
+
+<!--msb: main sidebar-->
+<div class="msb" id="msb"  style="display: none;">
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div class="brand-wrapper">
+                <!-- Brand -->
+                <div class="brand-name-wrapper">
+                    <p class="navbar-brand center" (click)="menuClose()">
+                        <img height="50px" src="assets/images/svg/x.svg" class="center" alt="">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-header ser acxt">
+            <div class="brand-wrapper at">
+                <!-- Brand -->
+                <a routerLink="/my-profile" class="brand-name-wrapper acx">
+                    <p class="navbar-brand center">
+                        <img height="40px" src="assets/images/hand-hard.svg" class="center" alt="">
+                    </p>
+                    <h3 class="text-center sx">INICIO</h3>
+                </a>
+            </div>
+        </div>
+
+        
+
+        <div class="navbar-header ser">
+            <div class="brand-wrapper at">
+                <!-- Brand -->
+                <a routerLink="/config-account" class="brand-name-wrapper acx">
+                    <p class="navbar-brand center">
+                        <img height="30px" src="assets/images/svg/profile.svg" class="center" alt="">
+                    </p>
+                    <h3 class="text-center sx">MI PERFIL</h3>
+                </a>
+            </div>
+        </div>
+
+       
+
+
+    </nav>
+</div>
