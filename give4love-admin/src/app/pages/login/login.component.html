@@ -1,0 +1,17 @@
+<div class="row jss1">
+    <div class="col-md-6 jss2 d-none d-md-block ">
+    </div>
+    <div class="col-md-6 align-middle">
+        <div class="container form-login">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8">
+                    <h1 class="text-center title-login">GIVE4LOVE</h1>
+                    <app-form-login (btnIngresar)="iniciarSesion($event)" (btnRegistrate)="registrate($event)">
+                    </app-form-login>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />" ></ngx-spinner>

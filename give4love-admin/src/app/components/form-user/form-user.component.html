@@ -1,0 +1,117 @@
+<!-- <pre>{{userForm.value|json}}</pre>
+<pre>{{modoEdicion}}</pre> -->
+<!-- <pre>{{dataUserEdit|json}}</pre> -->
+
+<div class="container">
+    <form class="row" [formGroup]="userForm" (ngSubmit)="submit()">
+        <ng-container formGroupName="data">
+            <ng-container formGroupName="attributes">
+                <div class="col-md-12 form-group text-center">
+                    <div class="circular--landscape dropshadow">
+                        <img class="" src="{{temporalImage}}" alt="Card image cap">
+                        <input class="foto" name="foto" type="file" (change)="cargarImagenUser($event)">
+                    </div>
+                    <p class="text-center label">
+                        Foto de perfil
+                    </p>
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="title">Titulo</label>
+                    <input type="text" formControlName="title" id="title" class="form-control form-control-sm">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="name">Nombres</label>
+                    <input type="text" formControlName="name" id="name" class="form-control form-control-sm">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="last_name">Apellidos</label>
+                    <input type="text" formControlName="last_name" id="last_name" class="form-control form-control-sm">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="number" maxlength="17" formControlName="phone" id="phone" class="form-control form-control-sm">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="cell_phone">Celular</label>
+                    <input type="number" maxlength="17" formControlName="cell_phone" id="cell_phone"
+                        class="form-control form-control-sm">
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" id="email" class="form-control form-control-sm">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" formControlName="password" id="password" class="form-control form-control-sm">
+                    <small id="emailHelp" class="form-text text-muted"
+                        [ngClass]="{'form-text-active':validadorPasword()[0]}">
+                        <img height="14px"
+                            src="assets/images/svg/check-{{validadorPasword()[0]?'valid.svg':'invalid.svg'}}" alt="">
+                        Una letra mayuscula.
+                    </small>
+                    <small id="emailHelp" class="form-text text-muted"
+                        [ngClass]="{'form-text-active':validadorPasword()[1]}">
+                        <img height="14px"
+                            src="assets/images/svg/check-{{validadorPasword()[1]?'valid.svg':'invalid.svg'}}" alt="">
+                        Un número
+                    </small>
+                    <small id="emailHelp" class="form-text text-muted"
+                        [ngClass]="{'form-text-active':validadorPasword()[2]}">
+                        <img height="14px"
+                            src="assets/images/svg/check-{{validadorPasword()[2]?'valid.svg':'invalid.svg'}}" alt="">
+                        Un carácter especial
+                    </small>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="password2">Repita contraseña</label>
+                    <input type="password" formControlName="password2" id="password2" class="form-control form-control-sm">
+                </div>
+
+                <div class="col-md-12 card-check" *ngIf="modoEdicion==false">
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-11">
+                            <label for="funcionario">
+                                <input type="checkbox" class="check" id="funcionario" #funcionario
+                                    [checked]="funcionario.checked" (change)="checkFuncionario(funcionario.checked)">
+                                <p class="pc"> Soy un <a class="link">funcionario autorizado</a>
+                                    de la organización seleccionada y tengo la autoridad para ejecutar un contrato en
+                                    nombre de la organización
+                            </label>
+
+
+
+                            <label for="terminos">
+                                <input type="checkbox" class="check" id="terminos" #terminos
+                                    [checked]="terminos.checked" (change)="checkTerminos(terminos.checked)">
+                                <p class="pc"> Acepto los <a class="link">Términos de uso</a> de Give4faith de
+                                    forma electrónica y acuderá
+                                    legalmente obligado por estos Términos de uso.</p>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 ">
+                    <button class="btn btn-secondary btn-block mg-t" (click)="regresar()"
+                        type="button">Regresar</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary btn-block mg-t" type="submit">Siguiente</button>
+                </div>
+
+            </ng-container>
+        </ng-container>
+    </form>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>

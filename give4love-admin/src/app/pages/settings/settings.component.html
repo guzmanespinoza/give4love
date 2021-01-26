@@ -1,0 +1,141 @@
+<app-navbar></app-navbar>
+<pre>{{demo|json}}</pre>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 logo-donaciones">
+            <div class="col-md-12">
+                <img src="assets/images/svg/sett.svg" alt="">
+                <h3 class="donaciones align-middle">CONFIGURACIÓN</h3>
+            </div>
+        </div>
+        <!-- <div class="col-md-6 ">
+            <div class="col-sm-12">
+                <br>
+                <form>
+                    <div class="row justify-content-md-end">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-sm mb1">
+                                <option value="">Filtro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-sm mb1" placeholder="Buscar">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9 text-right">
+            <button type="button" id="new" class="btn btn-outline-primary btn-sm " (click)="abrirAgregar()">
+                <!-- <svg width="18" height="18" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.5833 36.1667C28.2943 36.1667 36.1667 28.2943 36.1667 18.5833C36.1667 8.87233 28.2943 1 18.5833 1C8.87233 1 1 8.87233 1 18.5833C1 28.2943 8.87233 36.1667 18.5833 36.1667Z"
+                        stroke="#4B7FFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M19 12V26" stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M12 19H26" stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> -->
+                Agregar
+            </button>
+
+        </div>
+        <div class="col-md-9">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Tipo de donación</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of tiposDeDonaciones.data">
+                            <td>{{d.attributes.description}}</td>
+                            <td>
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="d.attributes.is_active" (click)="moverEstado(d)">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td>
+
+                                <img class="im" (click)="selectRow(d)" src="assets/images/svg/sett.svg" height="25px"
+                                    alt="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <br>
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <ng-container *ngIf="option=='add'">
+                            <div class="col-md-9 text-center">
+                                <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.5833 36.1667C28.2943 36.1667 36.1667 28.2943 36.1667 18.5833C36.1667 8.87233 28.2943 1 18.5833 1C8.87233 1 1 8.87233 1 18.5833C1 28.2943 8.87233 36.1667 18.5833 36.1667Z"
+                                        stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M19 12V26" stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M12 19H26" stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <h3 class="txt-m">Agregar</h3>
+                            </div>
+                            <div class="col-md-9">
+                                <app-form-donation-types (btnRegresar)="cancelar($event)"
+                                    (btnSiguiente)="agregar($event)"></app-form-donation-types>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="option=='edit'">
+                            <div class="col-md-9 text-center">
+                                <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.5833 36.1667C28.2943 36.1667 36.1667 28.2943 36.1667 18.5833C36.1667 8.87233 28.2943 1 18.5833 1C8.87233 1 1 8.87233 1 18.5833C1 28.2943 8.87233 36.1667 18.5833 36.1667Z"
+                                        stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M17.6034 12.6875H11.6896C11.2415 12.6875 10.8118 12.855 10.4949 13.1533C10.178 13.4515 10 13.856 10 14.2778V25.4095C10 25.8313 10.178 26.2358 10.4949 26.534C10.8118 26.8323 11.2415 26.9998 11.6896 26.9998H23.5172C23.9653 26.9998 24.3951 26.8323 24.7119 26.534C25.0288 26.2358 25.2068 25.8313 25.2068 25.4095V19.8436"
+                                        stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M23.9395 11.494C24.2756 11.1777 24.7314 11 25.2067 11C25.682 11 26.1379 11.1777 26.474 11.494C26.81 11.8104 26.9989 12.2394 26.9989 12.6867C26.9989 13.1341 26.81 13.5631 26.474 13.8794L18.4481 21.4331L15.0688 22.2282L15.9137 19.0477L23.9395 11.494Z"
+                                        stroke="#4B7FFB" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                                <h3 class="txt-m">MODIFICAR</h3>
+                            </div>
+                            <div class="col-md-9">
+                                <app-form-donation-types [dataType]="dataType" (btnRegresar)="cancelar($event)"
+                                    (btnSiguiente)="modificar($event)"></app-form-donation-types>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />">
+</ngx-spinner>

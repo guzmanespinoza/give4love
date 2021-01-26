@@ -1,0 +1,49 @@
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.form-control{
+    background: #e9ecef;
+    border-radius: 0 20px 20px 0;
+    border: 0px solid #ced4da;
+    font-size: 16px !important;
+    font-weight: 300;
+}
+
+
+.form-control:focus{
+    background: #e9ecef;
+    border-radius: 0 20px 20px 0;
+    border: 0px solid #ced4da;
+    box-shadow: none;
+}
+
+.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), .input-group>.input-group-append:not(:last-child)>.btn, .input-group>.input-group-append:not(:last-child)>.input-group-text, .input-group>.input-group-prepend>.btn, .input-group>.input-group-prepend>.input-group-text {
+    border-radius: 20px 0 0 20px;
+    border: 0px solid #ced4da;
+}
+
+.olvide {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    line-height: 13px;
+    cursor: pointer;
+}
+.no-tengo-cta{
+    margin-top: 40px;
+}

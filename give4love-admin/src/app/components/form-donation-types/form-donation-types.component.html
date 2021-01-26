@@ -1,0 +1,27 @@
+<!-- <pre>{{donationTypeForm.value|json}}</pre> -->
+<br>
+<br>
+<div class="container">
+    <form class="row" [formGroup]="donationTypeForm" (ngSubmit)="submit()">
+        <ng-container formGroupName="data">
+            <ng-container formGroupName="attributes">
+                <div class="col-md-12 form-group">
+                    <label for="description">Tipo de donación</label>
+                    <input type="text" formControlName="description" id="description"
+                        class="form-control form-control-sm">
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-secondary btn-block" (click)="regresar()">Cancelar</button>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-primary btn-block">Continuar</button>
+                </div>
+            </ng-container>
+        </ng-container>
+    </form>
+</div>
+<br>
+<br>
+<br>
+
+<simple-notifications [options]="options"></simple-notifications>

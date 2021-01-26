@@ -1,0 +1,224 @@
+<!-- <pre>{{partnerForm.value|json}}</pre> -->
+
+<!-- <pre>{{_dataParnertEdit|json}}</pre> -->
+<div class="container">
+    <form class="row" [formGroup]="partnerForm" (ngSubmit)="submit()">
+        <ng-container formGroupName="data">
+            <ng-container formGroupName="attributes">
+                <div class="col-md-12 form-group text-center">
+                    <div class="circular--landscape dropshadow">
+                        <img class="" src="{{temporalImage}}" alt="Card image cap">
+                        <input class="foto" type="file" (change)="cargarImagen($event)">
+                    </div>
+                    <p class="text-center label">
+                        Foto de perfil
+                    </p>
+
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" formControlName="name" id="name" class="form-control form-control-sm"
+                        [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.name').errors }">
+                    <div *ngIf="submitted && partnerForm.get('data.attributes.name').errors" class="invalid-feedback">
+                        <div *ngIf="partnerForm.get('data.attributes.name').errors.required">* Campo requerido</div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="number" maxlength="17"  formControlName="phone"
+                        id="phone" class="form-control form-control-sm"
+                        [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.phone').errors }">
+                    <div *ngIf="submitted && partnerForm.get('data.attributes.phone').errors" class="invalid-feedback">
+                        <div *ngIf="partnerForm.get('data.attributes.phone').errors.required">* Campo requerido</div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="cell_phone">Celular</label>
+                    <input type="text" type="number" maxlength="17"
+                        formControlName="cell_phone" id="cell_phone" class="form-control form-control-sm"
+                        [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.cell_phone').errors }">
+                    <div *ngIf="submitted && partnerForm.get('data.attributes.cell_phone').errors"
+                        class="invalid-feedback">
+                        <div *ngIf="partnerForm.get('data.attributes.cell_phone').errors.required">* Campo requerido
+                        </div>
+                    </div>
+                </div>
+
+
+                <ng-container formGroupName="address">
+                    <div class="col-md-12 form-group">
+                        <label for="name">Nombre de lugar</label>
+                        <textarea type="text" formControlName="name" id="name" class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.name').errors }"></textarea>
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.name').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.name').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="description">Dirección</label>
+                        <textarea type="text" formControlName="description" id="description"
+                            class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.description').errors }"></textarea>
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.description').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.description').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="street">Calle</label>
+                        <input type="text" formControlName="street" id="street" class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.street').errors }">
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.street').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.street').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="street_line">Línea de Calle</label>
+                        <input type="text" formControlName="street_line" id="street_line"
+                            class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.street_line').errors }">
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.street_line').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.street_line').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="postal_code">Código postal</label>
+                        <input type="text" formControlName="postal_code" id="postal_code"
+                            class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.postal_code').errors }">
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.postal_code').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.postal_code').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="city">Ciudad</label>
+                        <input type="text" formControlName="city" id="city" class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.city').errors }">
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.city').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.city').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="country">País</label>
+                        <!-- <input type="text" formControlName="country" id="country" class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.country').errors }"> -->
+
+
+                            <select name="country" id="country" class="form-control form-control-sm" formControlName="country" [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.country').errors }">
+                                <option *ngFor="let c of countries" value="{{c.name}}">{{c.name}}</option>
+                            </select>
+
+                        <div *ngIf="submitted && partnerForm.get('data.attributes.address.country').errors"
+                            class="invalid-feedback">
+                            <div *ngIf="partnerForm.get('data.attributes.address.country').errors.required">* Campo
+                                requerido</div>
+                        </div>
+                    </div>
+                    <!-- <ng-container formGroupName="coordinates">
+                        <div class="col-md-6 form-group hidden">
+                            <label for="latitude"> Latitud</label>
+                            <input type="text" formControlName="latitude" id="latitude"
+                                class="form-control form-control-sm"
+                                [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.coordinates.latitude').errors }">
+                            <div *ngIf="submitted && partnerForm.get('data.attributes.address.coordinates.latitude').errors"
+                                class="invalid-feedback">
+                                <div
+                                    *ngIf="partnerForm.get('data.attributes.address.coordinates.latitude').errors.required">
+                                    * Campo requerido</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-group hidden">
+                            <label for="longitude">Longitud</label>
+                            <input type="text" formControlName="longitude" id="longitude"
+                                class="form-control form-control-sm"
+                                [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.address.coordinates.longitude').errors }">
+                            <div *ngIf="submitted && partnerForm.get('data.attributes.address.coordinates.longitude').errors"
+                                class="invalid-feedback">
+                                <div
+                                    *ngIf="partnerForm.get('data.attributes.address.coordinates.longitude').errors.required">
+                                    * Campo requerido</div>
+                            </div>
+                        </div>
+                    </ng-container> -->
+                </ng-container>
+                <ng-container formGroupName="social">
+                    <div class="col-md-12 form-group">
+                        <label for="web">Sitio web</label>
+                        <input type="text" formControlName="web" id="web" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="facebook">Facebook</label>
+                        <input type="text" formControlName="facebook" id="facebook"
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="twitter">Twitter</label>
+                        <input type="text" formControlName="twitter" id="twitter" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="instagram">Instagram</label>
+                        <input type="text" formControlName="instagram" id="instagram"
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="youtube">Youtube</label>
+                        <input type="text" formControlName="youtube" id="youtube" class="form-control form-control-sm">
+                    </div>
+                </ng-container>
+                <div class="col-md-6 form-group">
+                    <label for="size">Tamaño de congregación</label>
+                    <select type="text" formControlName="size" id="size" class="form-control form-control-sm"   [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.size').errors }">
+                        <option value="Pequeño">Pequeño</option>
+                        <option value="Pequeño">Grande</option>
+                    </select>
+                    
+                  
+                    <div *ngIf="submitted && partnerForm.get('data.attributes.size').errors"
+                        class="invalid-feedback">
+                        <div *ngIf="partnerForm.get('data.attributes.size').errors.required">
+                            * Campo requerido</div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="confession">¿Con que denominación te identificas?</label>
+                    <input type="text" formControlName="confession" id="confession" class="form-control form-control-sm"
+                        [ngClass]="{ 'is-invalid': submitted && partnerForm.get('data.attributes.confession').errors }">
+                    <div *ngIf="submitted && partnerForm.get('data.attributes.confession').errors"
+                        class="invalid-feedback">
+                        <div *ngIf="partnerForm.get('data.attributes.confession').errors.required">
+                            * Campo requerido</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <button class="btn btn-secondary btn-block mg-t" (click)="regresar()"
+                        type="button">Regresar</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary btn-block mg-t" type="submit">Siguiente</button>
+                </div>
+            </ng-container>
+        </ng-container>
+    </form>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>

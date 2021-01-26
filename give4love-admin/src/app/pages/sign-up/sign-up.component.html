@@ -1,0 +1,63 @@
+<app-navbar [options]="false"></app-navbar>
+<div class="overlay"></div>
+<div class="container form-r">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <h1 class="title-sign-up">Registro</h1>
+        </div>
+        <div class="col-md-9">
+            <div class="container bg-white card-registro">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="nav-link text-center header-register" [ngClass]="{active:tab=='partner'}">
+                            1. Organización
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a class="nav-link text-center  header-register" [ngClass]="{active:tab=='user'}">
+                            2. Oficial autorizado
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a class="nav-link text-center  header-register" [ngClass]="{active:tab=='completo'}">3.
+                            Registro completo</a>
+                    </div>
+                </div>
+                <div class="card-registro-content" [ngClass]="{'d-invisible':tab!='partner'}" id="agregar-donante">
+                    <app-form-partner (btnRegresar)="cancelar()" (btnSiguiente)="obtenerDataDePartner($event)"></app-form-partner>
+                </div>
+                <div [ngClass]="{'d-invisible':tab!='user'}" class="card-registro-content" id="agregar-donante">
+                    <app-form-user (btnRegresar)="tab='partner'" (btnSiguiente)="obtenerDataDeUsuario($event)"></app-form-user>
+                </div>
+                <div *ngIf="tab=='completo'" class="card-registro-content" id="agregar-completo">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-12 text-center">
+                            <img class="img-complete" src="assets/images/svg/complete.svg" alt="">
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="text-center text-info-complete blue">El registro esta casi
+                                completo
+                            </h2>
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="text-center text-info-complete">Revisa tu correo electrónico</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="lead text-center">
+                                Para asegurarnos que registramos la dirección de correo electrónico
+                                correcta.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<simple-notifications [options]="options"></simple-notifications>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" template="<img height='371px' src='assets/images/gif/cargando.gif' />">
+</ngx-spinner>

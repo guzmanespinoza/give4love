@@ -1,0 +1,52 @@
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .circular--landscape img {
+    width: auto;
+    height: 100%;
+  }
+
+  .foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .dropshadow {
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    border-bottom: dashed 1px #ddd;
+  }
+  
+.check {
+    margin-right: 10px;
+  }
+  
+  .card-check {
+    padding: 20px;
+    background: #f7f8f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 136%;
+    /* or 14px */
+  
+    text-align: justify;
+  }
+  
+  .pc{
+    display: inline;
+  }
+

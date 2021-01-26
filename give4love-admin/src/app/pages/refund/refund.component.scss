@@ -1,0 +1,84 @@
+
+.info-images{
+    
+    display: inline-block;
+    margin-left: 2%;
+}
+.ctn-img{
+    display: inline-flex; 
+}
+.ctn-info{
+    margin-top: 2%;
+    display: inline-block; 
+    margin-left: 5%;
+}
+.info-totales{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #000000;
+}
+
+.info-monto-totales{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center; 
+    color: #7392B6;
+}
+
+.header-total > div{
+    border-right: 1px solid #E0E0E0;
+    padding-bottom: 2%;
+}
+
+.crd, .header-total{
+    padding-bottom: 1%;
+}
+.total-desembolsado{
+    border-right: 1px solid #ffffff !important;
+}
+
+.mb1{
+    margin-bottom: 2%;
+}
+
+.form-control{
+    border: 1px solid #D9E4EE;
+    color: #7392bd !important;
+}
+
+.form-control::placeholder{
+    color: #D9E4EE;
+}
+
+.card {
+    margin-top: 8px;
+    min-height: 170px;
+}
+
+.c-money {
+    color: #7392b6;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.h5, h5 {
+    font-size: 18px;
+}
+
+.img-circle{
+    margin: auto;
+    display: block;
+}
+
+.option {
+     border-left: 0px solid #e0e0e0; 
+    padding-left: 2%;
+}
